@@ -21,6 +21,11 @@ class UI {
             </div>
         `;
         productList.appendChild(element);
+        // this.resetForm();
+    }
+
+    resetForm() {
+        document.getElementById('product-form').reset();
     }
 
     deleteProduct() {
@@ -40,8 +45,9 @@ document.getElementById('product-form')
         const year = document.getElementById('year').value;
 
         const product = new Product(name, price, year);
-
-
+        const ui = new UI();
+        ui.addProduct(product);
+        ui.resetForm();
 
         e.preventDefault();
     });
